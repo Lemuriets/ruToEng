@@ -8,7 +8,10 @@ import (
 
 func toUpperEng(symbol, engSymbol string) string {
 	if strings.ToUpper(symbol) == symbol {
-		return string(strings.ToUpper(engSymbol)[0]) + engSymbol[1:]
+		if len(engSymbol) > 1 {
+			return string(strings.ToUpper(engSymbol)[0]) + engSymbol[1:]
+		}
+		return strings.ToUpper(engSymbol)
 	}
 	return engSymbol
 }
